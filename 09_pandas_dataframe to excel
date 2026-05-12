@@ -1,0 +1,19 @@
+import pandas as pd
+
+df = pd.read_excel('Book1.xlsx', sheet_name='Sheet1')  # for specific sheet read
+print(df["age"])
+print(df[["age","name"]])  # for multiple column read
+#print(df)
+df = pd.read_excel('Book1.xlsx', sheet_name=None)  #for multiple sheet read yah dictionar banayega aur a dict ke andar sheet1  ek key aur uska data ek value hoga usee tarah anya sheet ke bhi 
+print(df['Sheet1'])
+print(df['Sheet2'])
+#for multiple sheet read with loop
+for sheet_name, data in df.items():
+    print(f"Sheet Name: {sheet_name}")
+    print(data)
+    
+df = pd.read_excel('Book1.xlsx', sheet_name='Sheet1',usecols=['name'])  #for specific column read
+
+
+
+
