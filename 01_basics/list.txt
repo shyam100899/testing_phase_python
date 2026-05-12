@@ -1,0 +1,122 @@
+
+'C:\\Users\\ITSYS-PC4\\Desktop\\python folder\\python_hitesh'
+>>> list=[1,2,3] 
+//append(item): Adds a single element item to the end of the list
+>>> list.append(4) 
+>>> print(list)  
+[1, 2, 3, 4]
+//extend(iterable): Appends all elements from the iterable (another list or any iterable) to the end of the list.with iterable
+>>> list.extend((5,6,7))  
+>>> print(list)
+[1, 2, 3, 4, 5, 6, 7]
+>>> list.extend([5,6,7]) //Appends with another list
+>>> print(list)  
+[1, 2, 3, 4, 5, 6, 7, 5, 6, 7]
+//insert(index, item): Inserts item at the specified index in the list.
+>>> list.insert(7,8) 
+>>> print(list) 
+[1, 2, 3, 4, 5, 6, 7, 8, 5, 6, 7]
+//remove(item): Removes the first occurrence of item from the list
+>>> list.remove(7) 
+>>> print(list) 
+[1, 2, 3, 4, 5, 6, 8, 5, 6, 7]
+pop([index]): Removes and returns the item at index. If no index is specified, removes and returns the last item.
+>>> list.pop(2)  //with item index
+3
+>>> list.pop()  //without index(remove and returns lat item)
+7
+>>> print(list) 
+[1, 2, 4, 5, 6, 8, 5, 6]
+//index(item): Returns the index of the first occurrence of item
+>>> list.index(1) 
+0
+>>> print(list) 
+[1, 2, 4, 5, 6, 8, 5, 6]
+>>> list2 =list   //assign a list to another list
+>>> print(list2) 
+[1, 2, 4, 5, 6, 8, 5, 6]
+//orts the list in ascending order (modifies the original list).
+>>> list2.sort()
+>>> print(list2) 
+[1, 2, 4, 5, 5, 6, 6, 8]
+>>> print(list)  
+[1, 2, 4, 5, 5, 6, 6, 8]
+>>> list.pop() //remove last item
+8
+>>> print(list) 
+[1, 2, 4, 5, 5, 6, 6]
+//copy(): Returns a shallow copy of the list.
+>>> list3 =list.copy() //create a new list from a another memory loaction
+>>> list3.append(5) 
+>>> list1.append(5) 
+>>> list.append(5)  
+>>> print(list)  
+[1, 2, 4, 5, 5, 6, 6, 5]
+>>> print(list3) 
+[1, 2, 4, 5, 5, 6, 6, 5]
+>>> list.sort()
+>>> print(list) 
+[1, 2, 4, 5, 5, 5, 6, 6]
+>>> print(list3) 
+[1, 2, 4, 5, 5, 6, 6, 5]
+//reverse(): Reverses the elements of the list in place
+>>> list.reverse()  
+>>> print(list)    
+[6, 6, 5, 5, 5, 4, 2, 1]
+//count(item): Returns the number of occurrences of item in the list
+>>> list.count(5)  //ccurrence of 5 in given list
+3
+clear(): Removes all items from the list.
+>>> list.clear()
+>>> print(list) 
+[]
+Use len() to get the number of elements in a list.
+>>> length=len(list3) 
+>>> print(length) 
+8
+
+
+
+hey are immutable, meaning once they are created, their elements cannot be changed or modified. This immutability brings some limitations in terms of operations compared to lists. Here are some important methods and operations you can perform with tuples:
+
+
+>>> my_tuple = (1, 2, 3)
+>>> print(my_tuple) 
+(1, 2, 3)
+>>> print(type(my_tuple)) 
+<class 'tuple'>
+>>> my_tuple[1] 
+2
+>>> subset = my_tuple[1:2] 
+>>> print(subset) 
+(2,)
+>>> my_tuple=(1,2,3) 
+>>> a,b,c=my_tuple
+>>> print(a,b,c) 
+1 2 3
+>>> my_tuple2=(4,5,6) 
+>>> concatenated_tuple =my_tuple+my_tuple2
+>>> print(concatenated_tuple) 
+(1, 2, 3, 4, 5, 6)
+>>> count = concatenated_tuple.count(4) 
+>>> print(count) 
+1
+>>> index =concatenated_tuple.index(3) 
+>>> print(index) 
+2
+>>>
+
+
+
+String Find Method:
+
+Each will return the position that the substring is found at. The difference between the two is that find() returns the lowest position, and rfind() returns the highest position.
+
+
+string = "Don't you call me a mindless philosopher, you overweight glob of grease!"
+string.find('you')
+6
+string.rfind('you')
+42
+
+If the substring is not found, -1 is returned.

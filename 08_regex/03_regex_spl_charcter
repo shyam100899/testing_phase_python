@@ -1,0 +1,160 @@
+import re
+pattern = r"a.b"   # Matches any single character except a newline (\n)
+text = "acb"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+import re
+pattern = r"^Hello"  #Matches the start of the string.
+text = "Hello world"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+
+import re
+pattern = r"world$"   # Matches the end of the string.
+text = "Hello world"
+result = re.search(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+import re
+pattern = r"a*b"    #Matches 0 or more repetitions of the preceding character or group.
+text = "b"
+result = re.match(pattern, text)    #Matches: "b", "ab", "aaab", "aaaaab" (anything where "b" follows zero or more "a"s)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+
+import re
+pattern = r"a+b"   #Matches 1 or more repetitions of the preceding character or group.
+text = "aaab"
+result = re.match(pattern, text)  #Matches: "ab", "aaab", "aaaaab" (anything where one or more "a"s are followed by "b")
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+import re
+pattern = r"a?b" #Matches 0 or 1 occurrence of the preceding character or group.
+text = "abc"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+
+#Meaning: Matches between n and m repetitions of the preceding character or group.
+
+#{n}: Exactly n repetitions.
+#{n,}: At least n repetitions.
+#{,m}: Up to m repetitions.
+#{n,m}: Between n and m repetitions.import re
+pattern = r"a{2,4}"
+text = "aaa"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+ #Square Brackets ([])
+#Meaning: Matches any one of the characters inside the brackets.
+
+import re
+pattern = r"[abc]"
+text = "b"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+
+#Range inside brackets:
+#You can specify a range of characters, e.g., [0-9] to match any digit, or [a-z] to match any lowercase letter.
+
+
+import re
+pattern = r"[0-9]"
+text = "5"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+
+#Pipe (|)
+#Meaning: Acts as a logical OR operator, matching either the expression before or after the pipe.
+
+import re
+pattern = r"a|b"
+text = "a"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+
+#Parentheses (())
+#Meaning: Groups patterns together, allowing you to apply quantifiers (like *, +, {n,m}) to the entire group.
+
+import re
+pattern = r"(ab)+"
+text = "abab"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+
+#Backslash (\)
+#Meaning: Escapes a special character or gives special meaning to a character.
+
+#Escape special characters: You can use \ to escape characters like . or * to treat them literally.
+#Special sequences:
+#\d: Matches any digit (0-9).
+#\D: Matches any non-digit.
+#\w: Matches any alphanumeric character (a-z, A-Z, 0-9, and underscore _).
+#\W: Matches any non-word character.
+#\s: Matches any whitespace character (spaces, tabs, line breaks).
+#\S: Matches any non-whitespace character.
+#\b: Matches a word boundary.
+#\B: Matches a non-word boundary.
+
+import re
+pattern = r"\d{3}-\d{2}-\d{4}"
+text = "123-45-6789"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
+
+
+#Double Backslashes (\\)
+#Meaning: In Python strings, you need to escape a backslash by using a double backslash (\\)
+#because the single backslash is used for escaping.
+
+import re
+pattern = r"\\d"  # Matches the literal string "\d"
+text = "\d"
+result = re.match(pattern, text)
+if result:
+    print("Found:", result.group())
+else:
+    print("Not found")
